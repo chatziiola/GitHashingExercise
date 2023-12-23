@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+import hashlib
+import sys
+
+if (len(sys.argv) < 1):
+    print("Invalid usage")
+    print("Usage: hash_script <hash>")
+
+preHash = sys.argv[1]
+
+hashedLine = hashlib.sha256(preHash.strip().encode()).hexdigest()
+print(f"Hashed version of {preHash} is {hashedLine}")
